@@ -1,63 +1,45 @@
-<header>
-
-<!--
-  <<< Author notes: Course header >>>
-  Read <https://skills.github.com/quickstart> for more information about how to build courses using this template.
-  Include a 1280×640 image, course name in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Next to "About", add description & tags; disable releases, packages, & environments.
-  Add your open source license, GitHub uses the MIT license.
--->
-
 # Code with GitHub Copilot
 
-_GitHub Copilot can help you code by offering autocomplete-style suggestions right in VS Code and Codespaces._
+A personal walkthrough of the [GitHub Skills](https://skills.github.com) course **"Code with GitHub Copilot"**, completed in a Codespace using GitHub Copilot's autocomplete and comment-driven code suggestions in VS Code.
 
-</header>
+## What's in this repo
 
-<!--
-  <<< Author notes: Finish >>>
-  Review what we learned, ask for feedback, provide next steps.
--->
+This repo contains the small JavaScript exercises produced while working through the course activities:
 
-## Finish
+- `skills.js` — a `calculateNumbers(var1, var2)` function generated from a Copilot autocomplete suggestion (Step 2: seeing AI code suggestions).
+- `member.js` — a `skillsMember()` factory function that returns an object for tracking a member's skills (`addSkill`, `removeSkill`, `getSkills`), generated via Copilot's suggestions hub (Step 3).
+- `comments.js` — an [Express](https://expressjs.com/) web server exercise driven by comment-based Copilot suggestions (Step 4: "Create web server", "Create comments array", etc.). This file is an in-progress course exercise and is not a complete, runnable server.
 
-_Congratulations friend, you've completed this course!_
+The `.github/workflows/` and `.github/steps/` directories are GitHub Skills course-progression automation: each workflow checks for specific file contents and advances a step counter in this README as the course activities are completed. They are not application CI/CD.
 
-<img src="https://octodex.github.com/images/welcometocat.png" alt=celebrate width=300 align=right>
+## Tech stack
 
-Here's a recap of all the tasks you completed:
+- Node.js
+- [Express](https://expressjs.com/) (dependency used by `comments.js`)
+- ESLint + Prettier for linting/formatting
 
-- Set up Copilot inside a Codespace.
-- Use Copilot to accept suggested code.
-- Use Copilot's hub for alternate suggestions.
-- Leverage comments to have Copilot auto-suggest code.
+## Setup
 
-### Additional learning and resources
+```bash
+npm install
+```
 
-- [What is GitHub Copilot](https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot)
-- [About enterprise accounts for Copilot Business](https://docs.github.com/en/enterprise-cloud@latest/admin/copilot-business-only/about-enterprise-accounts-for-copilot-business)
-- [Getting started with Copilot](https://docs.github.com/en/copilot/getting-started-with-github-copilot/getting-started-with-github-copilot-in-visual-studio-code)
-- [Configure Copilot settings](https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-settings-on-githubcom)
+## Running
 
-### What's next?
+`skills.js` and `member.js` export plain functions and are not meant to be run directly. `comments.js` is an incomplete course exercise (it does not yet define any Express routes), so `npm start` will start the process but the server won't serve anything yet:
 
-- [We'd love to hear what you thought of this course](https://github.com/orgs/skills/discussions/categories/code-with-copilot).
-- [Learn another GitHub skill](https://github.com/skills).
-- [Read the Get started with GitHub docs](https://docs.github.com/en/get-started).
-- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
+```bash
+npm start
+```
 
-<footer>
+## Linting & formatting
 
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+```bash
+npm run lint      # check for lint errors
+npm run lint:fix   # auto-fix what ESLint can
+npm run format     # format with Prettier
+```
 
----
+## License
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/code-with-copilot) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
-
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
-
-</footer>
+MIT — see [LICENSE](./LICENSE).
